@@ -11,6 +11,7 @@ a "npm_modules" folder. Now you can run "gulp", and it will be
 watching your "scss" folder for any new files and will auto
 compile them into the dist folder! go into mixins folder and do bower install, then you can use the responsive Foundation mixins in scss... ex:
 
+```
 // Functions and Mixins
 @import "../mixins/settings";
 @import "../mixins/variables";
@@ -29,3 +30,29 @@ compile them into the dist folder! go into mixins folder and do bower install, t
 	}
 
 }
+```
+
+Also, there is bootstrap_responsive.scss for any Bootstrap projects:
+
+```
+@import "../mixins/settings";
+@import "../mixins/variables";
+@import "../mixins/_bootstrap_responsive";
+@import "../mixins/icons";
+
+.hero-box{
+	width:100%;
+	
+	@include breakpoint(md) {
+		width: 75%
+	}
+
+	@include breakpoint(lg) {
+		width: 50%;
+	}
+
+}
+
+
+
+```
