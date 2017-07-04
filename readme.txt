@@ -52,7 +52,17 @@ Also, there is bootstrap_responsive.scss for any Bootstrap projects:
 	}
 
 }
+```
 
+Also, if you make a `js` folder, it will now be compiled and minified to dist folder!
 
-
+If you want to tweak *where* the output is going, look inside the gulpfile.js.
+You can see what's happening there, for example, the 'watch' task is configured to watch for any changes in js and scss, but maybe you want it to also watch mixins folder for changes. You can add that line in:
+```
+// Watch Files For Changes
+gulp.task('watch', function() {
+    gulp.watch('js/*.js', ['lint', 'scripts']);
+    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('scss/mixins/*.scss', ['sass']);
+});
 ```
